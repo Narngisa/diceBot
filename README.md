@@ -1,6 +1,6 @@
 ## How to install ?
 
-1. Install [python]("https://www.python.org")
+1. Install [python](https://www.python.org)
 
 2. Create virtual environment
 ```
@@ -29,9 +29,9 @@ TOKEN=YOUR_TOKEN
 GUILD_ID=YOUR_GUILD_ID_SERVER
 ```
 > [!IMPORTANT]
-> ### TOKEN
-> You can get token this [Discord Devloper]("https://discord.com/developers/applications/")
-> ### GUILD_ID
+> #### TOKEN
+> You can get token this [Discord Devloper](https://discord.com/developers/applications/)
+> #### GUILD_ID
 > You can right-click to copy your id_server
 
 
