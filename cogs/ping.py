@@ -17,7 +17,8 @@ class Ping(commands.Cog):
     @app_commands.guilds(GUILD_ID)
     async def ping(self, interaction: discord.Interaction):
         latency = round(self.bot.latency * 1000)
-        await interaction.response.send_message(f"Pong: {latency} ms")
+        embed = discord.Embed(title=f"🏓 Pong", description=f"Ping: {latency} ms", color=discord.Color.blurple())
+        await interaction.response.send_message(embed=embed)
 
 async def setup(bot):
     await bot.add_cog(Ping(bot))

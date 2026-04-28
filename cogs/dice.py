@@ -2,7 +2,6 @@ import os
 import random
 import dotenv
 import discord
-from typing import Literal
 
 from discord.ext import commands
 from discord import app_commands
@@ -17,35 +16,39 @@ class Dice(commands.Cog):
 
     @app_commands.command(name="dice", description="Dice a roll")
     @app_commands.guilds(GUILD_ID)
-    async def dice(self, interaction: discord.Interaction, amount: int , roll: Literal[2, 3, 4, 6, 8, 10, 12, 20, 100]):
+    @app_commands.choices(dice=[
+        app_commands.Choice(name="1d2", value=2),
+        app_commands.Choice(name="1d3", value=3),
+        app_commands.Choice(name="1d4", value=4),
+        app_commands.Choice(name="1d6", value=6),
+        app_commands.Choice(name="1d8", value=8),
+        app_commands.Choice(name="1d10", value=10),
+        app_commands.Choice(name="1d12", value=12),
+        app_commands.Choice(name="1d20", value=20),
+        app_commands.Choice(name="1d100", value=100),
+    ])
+    async def dice(self, interaction: discord.Interaction , dice: app_commands.Choice[int], modifiers: int):
     
-        if amount <= 0:
-            await interaction.response.send_message("Pls take a number greater than zero.")
-            return
+        result = random.randint(1, dice.value)
 
-        if amount > 100:
-            await interaction.response.send_message("Too many rolls (max 100).")
-            return
+        mods = f"+{modifiers}" if modifiers >= 0 else f"{modifiers}"
 
-        result = [random.randint(1, roll) for _ in range(amount)]
-        total = sum(result)
+        embed = discord.Embed(title=f"🎲 You rolled {dice.name}", description=f"Modifiers: {mods}", color=discord.Color.green())
 
-        embed = discord.Embed(title=f"You rolled {amount}d{roll}", color=discord.Color.green())
+        crit_high = { 20: 20, 100: 100 }
+        crit_low = { 20: 1, 100: 1 }
 
-        if amount == 1 and roll == 20:
-            value = result[0]
-            if value == 20:
-                embed.title=f"Critical Success!!"
-                embed.color=discord.Color.gold()
-            elif value == 1:
-                embed.title=f"Critical Fail..."
-                embed.color=discord.Color.red()
-    
-        embed.add_field(name=f"Result", value=", ".join(map(str, result)), inline=False)
-        embed.add_field(name=f"Total", value=str(total), inline=False)
+        if result == crit_high.get(dice.value) :
+            embed.title=f"👑 Critical Success!!"
+            embed.color=discord.Color.gold()
+        elif result == crit_low.get(dice.value):
+            embed.title=f"💀 Critical Fail..."
+            embed.color=discord.Color.red()                              
+
+        embed.add_field(name=f"Result", value=str(result))
+        embed.add_field(name=f"Total", value=str(result + modifiers))
     
         await interaction.response.send_message(embed=embed)
-
 
 async def setup(bot):
     await bot.add_cog(Dice(bot))
