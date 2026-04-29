@@ -1,3 +1,6 @@
+# Dice Bot Discord
+This project bot discord that use commands in roll a dice for play D&D.
+
 ## How to install ?
 
 1. Install [python](https://www.python.org)
