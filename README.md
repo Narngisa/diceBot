@@ -37,4 +37,8 @@ GUILD_ID=YOUR_GUILD_ID_SERVER
 > #### GUILD_ID
 > You can right-click to copy your id_server
 
+6. Run bot.py
+```
+python bot.py
+```
 
