@@ -24,6 +24,7 @@ class Adv(commands.Cog):
         mods = f"+{modifiers}" if modifiers >= 0 else f"{modifiers}"
         
         value = max(result) if dice == "Advantage" else min(result)
+        text = "High Value" if dice == "Advantage" else "Low Value"
 
         embed = discord.Embed(title=f"⚔️ {dice} roll", description=f"Modifiers: {mods}", color=discord.Color.green())            
 
@@ -35,7 +36,7 @@ class Adv(commands.Cog):
             embed.color=discord.Color.red()
     
         embed.add_field(name=f"Result", value=", ".join(map(str, result)))
-        embed.add_field(name=f"Critical", value=str(value))
+        embed.add_field(name=text, value=str(value))
         embed.add_field(name="Total", value=str(value + modifiers))
     
         await interaction.response.send_message(embed=embed)
