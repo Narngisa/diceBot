@@ -1,44 +1,28 @@
+
 # Dice Bot Discord
-This project bot discord that use commands in roll a dice for play D&D.
+This project is built for use commands in roll a dice for play D&D.
+It makes people play D&D on discord ease.
 
 ## How to install ?
-
 1. Install [python](https://www.python.org)
-
 2. Create virtual environment
-```
-python -m venv venv
-```
-
-3. Run virtual environment
+3. Run `python -m venv venv`
+4. Run virtual environment
 > [!NOTE]
 > Window 
-> ```
-> /venv/Scripts/activate
-> ```
+> `/venv/Scripts/activate`
+> 
 > MacOS / Linux
-> ```
-> source venv/bin/activate
-> ```
+> `source venv/bin/activate`
 
-4. Use this command install library
-```
-pip install -r requirements.txt
-```
-
-5. Create .env file and copy this
+6. Run `pip install -r requirements.txt`
+7. Create .env file and copy this
 ```
 TOKEN=YOUR_TOKEN
 GUILD_ID=YOUR_GUILD_ID_SERVER
 ```
 > [!IMPORTANT]
-> #### TOKEN
 > You can get token this [Discord Devloper](https://discord.com/developers/applications/)
-> #### GUILD_ID
-> You can right-click to copy your id_server
-
-6. Run bot.py
-```
-python bot.py
-```
-
+> 
+> You can right-click to copy your id_server and input in `.env` file
+8. Run `python bot.py`<img width="361" height="194" alt="Screenshot 2026-06-03 201715" src="https://github.com/user-attachments/assets/b1345e8f-bd97-440a-8346-1f3cd26c0577" />
