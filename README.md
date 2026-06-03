@@ -1,7 +1,7 @@
 
 # Dice Bot Discord
 This project is built for use commands in roll a dice for play D&D.
-It makes people play D&D on discord ease.
+It makes you play D&D on discord ease.
 
 <img width="361" height="194" alt="Screenshot 2026-06-03 201715" src="https://github.com/user-attachments/assets/b1345e8f-bd97-440a-8346-1f3cd26c0577" />
 
