@@ -1,7 +1,7 @@
 # 🎲 Dice Bot Discord
 
 [![CI](https://github.com/Narngisa/diceBot/actions/workflows/ci.yml/badge.svg)](https://github.com/Narngisa/diceBot/actions/workflows/ci.yml)
-[![Python Version](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Python Version](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![discord.py](https://img.shields.io/badge/discord.py-v2.7.1-5865F2?logo=discord&logoColor=white)](https://discordpy.readthedocs.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
