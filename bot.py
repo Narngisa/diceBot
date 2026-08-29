@@ -60,7 +60,7 @@ async def reload(interaction: discord.Interaction):
         await interaction.followup.send(f"Reload failed:\n```{e}```", ephemeral=True)
 
 @reload.error
-async def reload_error(ineraction: discord.Interaction, error):
+async def reload_error(interaction: discord.Interaction, error):
     if isinstance(error, app_commands.errors.MissingPermissions):
         await interaction.response.send_message("You need admin permission to use this.", ephemeral=True)
 
@@ -69,4 +69,6 @@ async def main():
     await load_cogs()
     await bot.start(TOKEN)
 
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
+
